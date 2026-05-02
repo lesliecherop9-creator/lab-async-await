@@ -3,8 +3,8 @@ function displayPosts(posts) {
     ul.innerHTML ="";
     posts.forEach(post => {
         const li = document.createElement("li");
-        const hi=document.createElement("h1");
-        hi.testContent=post.title;
+        const h1=document.createElement("h1");
+        h1.textContent=post.title;
         const p=document.createElement("p");
         p.textContent=post.body;
         li.appendChild(h1);
@@ -18,7 +18,8 @@ async function getPosts(){
         const data=await response.json();
         displayPosts(data);
     }catch(error){
-        console.log("Erro fetching posts:",error);
+        console.log("Error fetching posts:",error);
     }
     }
-}
+
+getPosts();
